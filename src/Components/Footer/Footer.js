@@ -9,7 +9,7 @@ const Footer = (props) => {
     return (
         <footer className="bg-info">
 
-            <Container className="d-flex flex-row">
+            <Container className="d-flex flex-row justify-content-around">
                 <h1 className="text-white display-1"> THE GENERICS</h1>
                 <Nav className="d-flex flex-row fw-bold">
                     <Nav.Link href="https://www.youtube.com" >
