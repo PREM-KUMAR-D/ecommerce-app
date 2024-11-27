@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from "react-bootstrap";
+import NavBar from "../NavBar/NavBar";
 
 
 
@@ -8,25 +9,14 @@ import { Container } from "react-bootstrap";
 const Header = (props) => {
 
     return (
-        <Container>
-            <header className="container">
-                <ul >
-                    <li> 
-                        <a href="./index.html">HOME</a>
-                    </li>
-                    <li>
-                        <a href="./index.hmtl">STORE</a>
-                    </li>
-                    <li>
-                        <a href="./about.html">ABOUT</a>
-                    </li>
-                    <a href="#cart" >cart<span>0</span></a>
-                </ul>
-                <h1>The Generics</h1>
-
+      
+            <header className="bg-secondary times-bold">
+                <NavBar></NavBar>
+                <Container className="text-center">
+                    <h1 className="text-white display-1"> THE GENERICS</h1>
+                </Container>
             </header>
-
-        </Container>
+        
     )
 }
 

@@ -1,20 +1,26 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar,Nav } from "react-bootstrap";
+import { Navbar, Nav, Button , Badge } from "react-bootstrap";
 
-const NavBar = (props)=>{
+const NavBar = (props) => {
 
-    return (
-        <Navbar className="bg-black" variant="dark">
-              <Nav className="mx-auto text-center fw-bold">
+  return (
+    <Navbar className="bg-black" variant="dark">
+      <Nav className="mx-auto text-center fw-bold">
 
-                <Nav.Link href="#home" >HOME</Nav.Link>
-                <Nav.Link href="#store">STORE</Nav.Link>
-                <Nav.Link href="#about">ABOUT</Nav.Link>
-              </Nav>
+        <Nav.Link href="#home" >HOME</Nav.Link>
+        <Nav.Link href="#store">STORE</Nav.Link>
+        <Nav.Link href="#about">ABOUT</Nav.Link>
 
-        </Navbar>
-    )
+      </Nav>
+      <div className="d-flex align-items-center">
+        <Button variant="outline-info">
+          Cart <Badge bg="dark" className="ms-2">3</Badge>
+        </Button>
+      </div>
+
+    </Navbar>
+  )
 
 }
 
