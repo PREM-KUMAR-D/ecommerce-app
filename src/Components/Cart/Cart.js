@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
 import CartItem from "../CartItems/CartItems";
+import CartContext from "../../store/cart-context";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import classes from "./Cart.module.css";
@@ -27,16 +28,21 @@ const cartElements = [
 ];
 
 const Cart = (props) => {
- 
+  
+  const cartCtx = useContext(CartContext);
 
-  const handleClose = () => props.onSetShow(()=>false);
+
+  const handleClose = () => {
+    console.log(JSON.stringify(cartCtx))
+    cartCtx.setShowCart(false)
+  };
 
 
   const total = cartElements.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
 
   return (
-    props.show && (
-      <div className={`${classes.cartContainer} p-3`}>
+    (
+      cartCtx.showCart && <div className={`${classes.cartContainer} p-3`}>
         <Card className={classes.cartCard}>
           <Card.Header className="d-flex justify-content-between align-items-center">
             <h3 className="mb-0 metal-mania">Cart</h3>

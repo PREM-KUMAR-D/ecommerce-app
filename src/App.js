@@ -7,22 +7,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Music from "./Components/Music/Music";
 import Cart from "./Components/Cart/Cart";
+import CartProvider from "./store/CartProvider";
 
 
 
 
 function App() {
 
-  const [show, setShow] = useState(false);
+  
 
   return (
-    <div >
-      <Header onSetShow={setShow}></Header>
+    <CartProvider>
+      <Header></Header>
       <Music></Music>
-      <Cart onSetShow={setShow} show={show}></Cart>
+      <Cart ></Cart>
       <Footer></Footer>
 
-    </div>
+    </CartProvider>
   );
 }
 
