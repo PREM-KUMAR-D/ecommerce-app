@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 
@@ -10,12 +10,16 @@ import Cart from "./Components/Cart/Cart";
 
 
 
+
 function App() {
+
+  const [show, setShow] = useState(false);
+
   return (
     <div >
-      <Header></Header>
+      <Header onSetShow={setShow}></Header>
       <Music></Music>
-      <Cart></Cart>
+      <Cart onSetShow={setShow} show={show}></Cart>
       <Footer></Footer>
 
     </div>

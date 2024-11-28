@@ -11,7 +11,7 @@ const Header = (props) => {
     return (
       
             <header className="bg-secondary times-bold">
-                <NavBar></NavBar>
+                <NavBar onSetShow={props.onSetShow}></NavBar>
                 <Container className="text-center">
                     <h1 className="text-white display-1 p-5"> THE GENERICS</h1>
                 </Container>

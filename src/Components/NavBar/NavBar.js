@@ -12,7 +12,7 @@ const NavBar = (props) => {
           <Nav.Link href="#about">ABOUT</Nav.Link>
         </Nav>
         <div className="d-flex align-items-center">
-          <Button variant="outline-info">
+          <Button variant="outline-info"  onClick={props.onSetShow(()=>true)}>
             Cart <Badge bg="dark" className="ms-2">3</Badge>
           </Button>
         </div>
