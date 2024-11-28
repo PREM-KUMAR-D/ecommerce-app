@@ -6,6 +6,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Music from "./Components/Music/Music";
+import Cart from "./Components/Cart/Cart";
 
 
 
@@ -14,7 +15,7 @@ function App() {
     <div >
       <Header></Header>
       <Music></Music>
-
+      <Cart></Cart>
       <Footer></Footer>
 
     </div>

@@ -1,0 +1,18 @@
+.cart-container{
+    position: "fixed";
+    top: "10%";
+    right: "0%";
+    width: "400px";
+    height: "100vh";
+    z-index: 1050;
+    overflow-y: "auto";
+}
+
+
+.cart-card{
+    background-color: "white";
+    padding: "15px";
+    border: "1px solid rgba(0, 0, 0, 0.2)";
+    box-shadow: "0 4px 8px rgba(0, 0, 0, 0.2)";
+    height: "100%";
+}
