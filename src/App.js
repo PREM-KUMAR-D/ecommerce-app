@@ -1,15 +1,18 @@
 import React,{useState} from "react";
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
+import { createBrowserRouter , RouterProvider} from "react-router-dom";
+
+import AboutUs from "./pages/AboutUs/AboutUs";
+import Store from "./pages/Store/Store";
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Music from "./Components/Music/Music";
-import Cart from "./Components/Cart/Cart";
-import CartProvider from "./store/CartProvider";
+const router = createBrowserRouter([
 
-
+  {path: '/about', element: <AboutUs/> },
+  {path: '/store', element:<Store/>}
+]
+)
 
 
 function App() {
@@ -17,13 +20,9 @@ function App() {
   
 
   return (
-    <CartProvider>
-      <Header></Header>
-      <Music></Music>
-      <Cart ></Cart>
-      <Footer></Footer>
+    <RouterProvider router={router}>
+    </RouterProvider>
 
-    </CartProvider>
   );
 }
 
