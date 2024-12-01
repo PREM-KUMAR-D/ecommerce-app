@@ -11,7 +11,7 @@ const Footer = (props) => {
 
             <Container className="d-flex flex-row justify-content-around">
                 <h1 className="text-white display-1"> THE GENERICS</h1>
-                <Nav className="d-flex flex-row fw-bold">
+                {props.enableSocials && <Nav className="d-flex flex-row fw-bold">
                     <Nav.Link href="https://www.youtube.com" >
                         <img width="30px" src="/images/youtube-logo.jpg" alt="youtube link" />
                     </Nav.Link>
@@ -22,6 +22,7 @@ const Footer = (props) => {
                         <img width="30px" src="/images/Facebook Logo.png" alt="facebook link" />
                     </Nav.Link>
                 </Nav>
+                }
             </Container>
 
         </footer>

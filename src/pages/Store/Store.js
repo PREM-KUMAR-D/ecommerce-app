@@ -15,10 +15,10 @@ const Store = (props)=>{
     return (
 
     <CartProvider>
-        <Header disableCart={false}></Header>
+        <Header disableCart={false} headerButtonEnabled={false}></Header>
         <Music></Music>
         <Cart ></Cart>
-        <Footer></Footer>
+        <Footer enableSocials={true}></Footer>
     </CartProvider>
     )
 

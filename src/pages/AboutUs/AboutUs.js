@@ -7,7 +7,7 @@ import "./AboutUs.css";
 const AboutUs = (props) => {
     return (
         <>
-            <Header disableCart={true} />
+            <Header disableCart={true}  headerButtonEnabled={false}/>
             <section id="about" className="about">
                 <h2 className="metal-mania text-center">About</h2>
                 <div>
@@ -40,7 +40,7 @@ const AboutUs = (props) => {
                 </div>
             </section>
 
-            <Footer />
+            <Footer enableSocials={true}/>
 
         </>
     )
