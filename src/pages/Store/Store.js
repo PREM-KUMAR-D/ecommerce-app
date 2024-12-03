@@ -10,13 +10,13 @@ const Store = (props)=>{
 
     return (
 
-    <CartProvider>
+
         <section id="store">
             <Music></Music>
             <Cart ></Cart>
         </section>
+
         
-    </CartProvider>
     )
 
 

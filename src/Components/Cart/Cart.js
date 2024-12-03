@@ -31,9 +31,11 @@ const Cart = (props) => {
   
   const cartCtx = useContext(CartContext);
 
+  
+
 
   const handleClose = () => {
-    console.log(JSON.stringify(cartCtx))
+    
     cartCtx.setShowCart(false)
   };
 

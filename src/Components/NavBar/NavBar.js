@@ -9,8 +9,9 @@ const NavBar = (props) => {
   const cartCtx = useContext(CartContext);
 
   const handleOpenCart = () => {
-    console.log(JSON.stringify(handleOpenCart));
+    
     cartCtx.setShowCart(true);
+    
   }
 
   return (
