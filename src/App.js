@@ -11,6 +11,7 @@ import CartProvider from "./store/CartProvider";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Products from "./pages/Products/Products";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ const MainLayout = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/store" element={<Store />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/products/:productId" element={<Products/>} />
         </Routes>
       </div>
 
