@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Navbar, Nav, Button, Badge } from "react-bootstrap";
 import { NavLink } from "react-router-dom";  
-import CartContext from "../../store/cart-context";
+import CartContext from "../../store/CartContext/cart-context";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavBar = (props) => {

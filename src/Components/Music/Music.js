@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import BasicCard from "../Card/BasicCard";
 import { Container, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ToastContext from "../../store/ToastContext/toast-context";
 
 const productsArr = [
     {
@@ -35,6 +36,10 @@ const productsArr = [
 ];
 
 const Music = () => {
+
+    const toastCtx = useContext(ToastContext);
+    
+
     return (
         <Container className="d-flex flex-column justify-content-center align-items-center min-vh-100">
             <h2 className="metal-mania text-center mb-4">Music</h2>
@@ -47,6 +52,7 @@ const Music = () => {
                             image={prod.imageUrl}
                             title={prod.title}
                             price={prod.price}
+                            onAddToast={(message)=>toastCtx.addToast(message)}
                         />
                     </Col>
                 ))}

@@ -7,7 +7,8 @@ import Home from "./pages/Home/Home";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-import CartProvider from "./store/CartProvider";
+import CartProvider from "./store/CartContext/CartProvider";
+import ToastProvider from "./store/ToastContext/ToastProvider";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -16,9 +17,11 @@ import Products from "./pages/Products/Products";
 function App() {
   return (
     <Router>
+      <ToastProvider>
         <CartProvider>
           <MainLayout />
         </CartProvider>
+      </ToastProvider>
     </Router>
   );
 }
@@ -46,7 +49,7 @@ const MainLayout = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/store" element={<Store />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/products/:productId" element={<Products/>} />
+          <Route path="/products/:productId" element={<Products />} />
         </Routes>
       </div>
 

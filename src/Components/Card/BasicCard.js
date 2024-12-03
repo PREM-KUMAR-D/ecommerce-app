@@ -1,6 +1,6 @@
 import React,{useContext} from "react";
 import { Card, Button, Badge } from "react-bootstrap";
-import CartContext from "../../store/cart-context";
+import CartContext from "../../store/CartContext/cart-context";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import classes from "./BasicCard.module.css"
@@ -40,6 +40,8 @@ const BasicCard = (props) => {
             return [...prev, toAddCartItem];
           }
         });
+
+        props.onAddToast(`${props.title} added to the cart`);
       };
       
     
