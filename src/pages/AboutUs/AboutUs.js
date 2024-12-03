@@ -1,20 +1,17 @@
 import React from "react";
-import Header from "../../Components/Header/Header";
-import Footer from "../../Components/Footer/Footer";
 import "./AboutUs.css";
 
-
-const AboutUs = (props) => {
-    return (
-        <>
-            <Header disableCart={true}  headerButtonEnabled={false}/>
-            <section id="about" className="about">
-                <h2 className="metal-mania text-center">About</h2>
-                <div>
-                    <img src="https://prasadyash2411.github.io/ecom-website/img/Band%20Members.png" alt="Band Members" />
-                   
-                    <p>
-                        Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of
+const AboutUs = () => {
+  return (
+    <section id="about" className="about">
+      <h2 className="metal-mania text-center">About</h2>
+      <div>
+        <img
+          src="https://prasadyash2411.github.io/ecom-website/img/Band%20Members.png"
+          alt="Band Members"
+        />
+        <p>
+        Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of
                         sorrows, hates no prosecutors will unfold in the enduring of which
                         were born in it? Often leads smallest mistake some pain main
                         responsibilities are to stand for the right builder of pleasure,
@@ -36,16 +33,10 @@ const AboutUs = (props) => {
                         for the fault, it is often one of us, however, have any! Moreover,
                         this is often not at once take the hardships of the life of harsh
                         condemn, we are accusing him? Him whom something large cisterns.
-                    </p>
-                </div>
-            </section>
-
-            <Footer enableSocials={true}/>
-
-        </>
-    )
-}
+        </p>
+      </div>
+    </section>
+  );
+};
 
 export default AboutUs;
-
-

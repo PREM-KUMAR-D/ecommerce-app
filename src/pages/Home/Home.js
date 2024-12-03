@@ -1,10 +1,6 @@
 import React from "react";
-import HeaderButtons from "../../Components/HeaderButtons/HeaderButtons";
-import Header from "../../Components/Header/Header";
 import TourItem from "../../Components/TourItem/TourItem";
-import Footer from "../../Components/Footer/Footer";
-import "./Home.css"; // For global styles
-
+import "./Home.css"; 
 const toursData = [
   { date: "JUL 16", place: "DETROIT, MI", venue: "DTE ENERGY MUSIC THEATRE" },
   { date: "JUL 19", place: "TORONTO, ON", venue: "BUDWEISER STAGE" },
@@ -16,23 +12,17 @@ const toursData = [
 
 const Home = () => {
   return (
-    <div>
-    <Header disableCart={false} headerButtonEnabled={true}></Header>
-
-
-      <section id="tours" className="tours-container ">
-        <h2 className="metal-mania text-center">TOURS</h2>
-        {toursData.map((tour, index) => (
-          <TourItem
-            key={index}
-            date={tour.date}
-            place={tour.place}
-            venue={tour.venue}
-          />
-        ))}
-      </section>
-      <Footer enableSocials={false}></Footer>
-    </div>
+    <section id="tours" className="tours-container">
+      <h2 className="metal-mania text-center">TOURS</h2>
+      {toursData.map((tour, index) => (
+        <TourItem
+          key={index}
+          date={tour.date}
+          place={tour.place}
+          venue={tour.venue}
+        />
+      ))}
+    </section>
   );
 };
 

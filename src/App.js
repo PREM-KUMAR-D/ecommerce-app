@@ -1,34 +1,56 @@
 import React from "react";
-import { createBrowserRouter , RouterProvider} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Store from "./pages/Store/Store";
 import Home from "./pages/Home/Home";
 import ContactUs from "./pages/ContactUs/ContactUs";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import CartProvider from "./store/CartProvider";
 
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const router = createBrowserRouter([
-
-  {path: '/about', element: <AboutUs/> },
-  {path: '/store', element:<Store/>},
-  {path: "/home", element: <Home /> },
-  {path:'/contact-us',element: <ContactUs/>},
-
-]
-)
-
+import './App.css';
 
 function App() {
-
-  
-
   return (
-    <RouterProvider router={router}>
-    </RouterProvider>
-
+    <Router>
+        <CartProvider>
+          <MainLayout />
+        </CartProvider>
+    </Router>
   );
 }
+
+const MainLayout = () => {
+  const location = useLocation();
+
+
+  const isHome = location.pathname === "/" || location.pathname === "/home";
+  const isStore = location.pathname === "/store";
+  const isAbout = location.pathname === "/about";
+  const isContactUs = location.pathname === "/contact-us";
+
+  return (
+    <>
+      <Header
+        disableCart={isContactUs || isAbout || isHome}
+        headerButtonEnabled={isHome}
+      />
+
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+        </Routes>
+      </div>
+
+      <Footer enableSocials={isStore || isAbout} />
+    </>
+  );
+};
 
 export default App;
