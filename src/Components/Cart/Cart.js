@@ -28,19 +28,27 @@ const cartElements = [
 ];
 
 const Cart = (props) => {
+
+  
   
   const cartCtx = useContext(CartContext);
 
+
   
-
-
   const handleClose = () => {
     
     cartCtx.setShowCart(false)
   };
 
+  const removeItemHandler = (id) => {
+    cartCtx.removeItem(id); 
+  };
 
-  const total = cartElements.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
+  const cartItems = cartCtx.cart || [];
+
+
+  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
+  
 
   return (
     (
@@ -60,14 +68,16 @@ const Cart = (props) => {
               </Row>
 
               
-              {cartElements.map((item, index) => (
+              {cartCtx.cart.map((item, index) => (
                 <CartItem 
                     imageUrl={item.imageUrl}
                     title={item.title}
                     price={item.price}
                     quantity={item.quantity}
                     index={index}
-                    key={index}
+                    key={item.id}
+                    id={item.id}
+                    onRemove={removeItemHandler}
                 />
               ))}
 

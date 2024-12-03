@@ -1,9 +1,49 @@
-import React from "react";
+import React,{useContext} from "react";
+import { Card, Button, Badge } from "react-bootstrap";
+import CartContext from "../../store/cart-context";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import classes from "./BasicCard.module.css"
-import { Card, Button, Badge } from "react-bootstrap";
 
 const BasicCard = (props) => {
+
+    // {
+    //     title: 'Yellow and Black Colors',
+    //     price: 9.99,
+    //     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
+    //     quantity: 1,
+    //   },
+
+
+    const cartCtx = useContext(CartContext);
+      
+    const addItemHandler = () => {
+        const toAddCartItem = {
+          title: props.title,
+          price: props.price,
+          imageUrl: props.image,
+          id: props.id,
+          quantity: 1,
+        };
+      
+
+        cartCtx.setCart((prev) => {
+          const existingItemIndex = prev.findIndex(item => item.id === toAddCartItem.id);
+      
+          if (existingItemIndex >= 0) {
+
+            const updatedCart = [...prev];
+            updatedCart[existingItemIndex].quantity += 1;
+            return updatedCart;
+          } else {
+
+            return [...prev, toAddCartItem];
+          }
+        });
+      };
+      
+    
+
 
     return (
         <Card className={`${classes.card} m-4`}>
@@ -17,7 +57,7 @@ const BasicCard = (props) => {
 
                 <Badge bg="white" className="ms-2 fs-4" text="dark">${props.price}</Badge>
 
-                <Button variant="primary">Add to Cart</Button>
+                <Button variant="primary" onClick={addItemHandler}>Add to Cart</Button>
 
 
             </Card.Body>

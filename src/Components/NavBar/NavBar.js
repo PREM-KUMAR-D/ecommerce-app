@@ -45,7 +45,7 @@ const NavBar = (props) => {
       {!props.disableCart && (
         <div className="d-flex align-items-center">
           <Button variant="outline-info" onClick={handleOpenCart}>
-            Cart <Badge bg="dark" className="ms-2">3</Badge>
+            Cart <Badge bg="dark" className="ms-2">{cartCtx.cart.length}</Badge>
           </Button>
         </div>
       )}
