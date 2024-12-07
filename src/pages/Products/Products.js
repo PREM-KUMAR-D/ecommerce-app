@@ -13,11 +13,47 @@ const productsArr = [
         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
         description: 'Beautiful collection of colors.',
         alternateImages: [
-            'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-            'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-            'https://prasadyash2411.github.io/ecom-website/img/Album%203.png'
+            'https://picsum.photos/id/1/300/300',
+            'https://picsum.photos/id/2/300/300',
+            'https://picsum.photos/id/3/300/300'
         ]
     },
+    {
+        id:2,
+        title: 'Black and white Colors',
+        price: 50,
+        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
+        description: 'Beautiful collection of colors.',
+        alternateImages: [
+            'https://picsum.photos/id/4/300/300',
+            'https://picsum.photos/id/5/300/300',
+            'https://picsum.photos/id/6/300/300'
+        ]
+    },
+    {
+        id:3,
+        title: 'Yellow and Black Colors',
+        price: 70,
+        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
+        description: 'Beautiful collection of colors.',
+        alternateImages: [
+            'https://picsum.photos/id/7/300/300',
+            'https://picsum.photos/id/8/300/300',
+            'https://picsum.photos/id/9/300/300'
+        ]
+    },
+    {
+        id:4,
+        title: 'Blue Color',
+        price: 100,
+        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
+        description: 'Beautiful collection of colors.',
+        alternateImages: [
+            'https://picsum.photos/id/10/300/300',
+            'https://picsum.photos/id/11/300/300',
+            'https://picsum.photos/id/12/300/300'
+        ]
+    }
     
 ];
 
