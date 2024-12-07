@@ -128,7 +128,7 @@ const Products = () => {
     };
 
     return (
-        <Container fluid style={{ padding: "20px" }}>
+        <Container style={{ padding: "20px" }}>
             <Row>
                 <Col md={8} style={{ borderRight: "1px solid #ddd", padding: "20px" }}>
                     <h2>{product.title}</h2>

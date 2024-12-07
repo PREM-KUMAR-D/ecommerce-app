@@ -40,7 +40,7 @@ const Cart = (props) => {
             <Button className="align-self-center" variant="dark" onClick={handleClose}>X</Button>
           </Card.Header>
           <Card.Body>
-            <Container fluid>
+            <Container>
               
               <Row className="fw-bold border-bottom pb-2">
                 <Col>Item</Col>
