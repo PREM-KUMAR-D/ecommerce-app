@@ -49,7 +49,7 @@ const MainLayout = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/store" element={<Store />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/products/:productId" element={<Products />} />
+          <Route path="/products/:productId" element={<Products/>} />
         </Routes>
       </div>
 

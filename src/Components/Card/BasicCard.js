@@ -1,5 +1,6 @@
 import React,{useContext} from "react";
 import { Card, Button, Badge } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import CartContext from "../../store/CartContext/cart-context";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,6 +17,11 @@ const BasicCard = (props) => {
 
 
     const cartCtx = useContext(CartContext);
+    const navigate = useNavigate();
+
+    const imageClickHandler = ()=>{
+      navigate(`/products/${props.id}`);
+    }
       
     const addItemHandler = () => {
         const toAddCartItem = {
@@ -52,7 +58,9 @@ const BasicCard = (props) => {
             <Card.Title className="text-center times-bold">{props.title}</Card.Title>
 
 
-            <div className={classes['card-img-wrapper']}>
+            <div className={classes['card-img-wrapper']}
+              onClick={imageClickHandler}
+              role="button">
                 <Card.Img variant="top" className={classes['card-img-top']} src={props.image} />
             </div>
             <Card.Body className="d-flex justify-content-between">
