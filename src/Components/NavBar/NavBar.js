@@ -3,15 +3,17 @@ import { Navbar, Nav, Button, Badge } from "react-bootstrap";
 import { NavLink } from "react-router-dom";  
 import CartContext from "../../store/CartContext/cart-context";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AuthContext from "../../store/AuthContext/auth-context";
 
 const NavBar = (props) => {
 
   const cartCtx = useContext(CartContext);
+  const authCtx = useContext(AuthContext);
+
+  console.log("NavBar isLoggedIn :",authCtx.isLoggedIn)
 
   const handleOpenCart = () => {
-    
     cartCtx.setShowCart(true);
-    
   }
 
   return (
@@ -34,6 +36,12 @@ const NavBar = (props) => {
           className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
         >
           ABOUT
+        </NavLink>
+        <NavLink
+          to="/login"
+          className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+        >
+          {authCtx.isLoggedIn? '':'LOGIN'}
         </NavLink>
         <NavLink
           to="/contact-us"

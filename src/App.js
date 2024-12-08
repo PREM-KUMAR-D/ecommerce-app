@@ -9,19 +9,23 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import CartProvider from "./store/CartContext/CartProvider";
 import ToastProvider from "./store/ToastContext/ToastProvider";
+import AuthProvider from "./store/AuthContext/AuthProvider";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Products from "./pages/Products/Products";
+import Login from "./pages/Login/Login";
 
 function App() {
   return (
     <Router>
+      <AuthProvider>
       <ToastProvider>
         <CartProvider>
           <MainLayout />
         </CartProvider>
       </ToastProvider>
+      </AuthProvider>
     </Router>
   );
 }
@@ -50,6 +54,7 @@ const MainLayout = () => {
           <Route path="/store" element={<Store />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/products/:productId" element={<Products/>} />
+          <Route path="/login" element={<Login/>} />
         </Routes>
       </div>
 
