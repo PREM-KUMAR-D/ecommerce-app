@@ -57,8 +57,9 @@ const Login = (props) => {
       }
 
 
-      console.log(data.idToken)
+      
       localStorage.setItem("token", data.idToken);
+      localStorage.setItem("email",enteredEmail);
       const successMessage = isLogin ? "Login Success" : " Sign Up Success";
       
       toastCtx.addToast(successMessage);

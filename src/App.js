@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation , Navigate} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Store from "./pages/Store/Store";
@@ -18,6 +18,7 @@ import Login from "./pages/Login/Login";
 import AuthContext from "./store/AuthContext/auth-context";
 
 function App() {
+
   return (
     <Router>
       <AuthProvider>
@@ -33,13 +34,20 @@ function App() {
 
 const MainLayout = () => {
   const location = useLocation();
+  
   const authCtx = useContext(AuthContext);
+
+
+
+
 
 
   const isHome = location.pathname === "/" || location.pathname === "/home";
   const isStore = location.pathname === "/store";
   const isAbout = location.pathname === "/about";
   const isContactUs = location.pathname === "/contact-us";
+
+
 
   return (
     <>

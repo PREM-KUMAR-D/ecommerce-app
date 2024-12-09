@@ -4,9 +4,14 @@ import AuthContext from "./auth-context";
 const AuthProvider = (props)=>{
 
 
+    const token = localStorage.getItem("token");
+    
+  
+
+
     const [email,setEmail] = useState("");
     const [userName,setUserName] = useState("");
-    const [isLoggedIn,setIsLoggedIn]= useState(false);
+    const [isLoggedIn,setIsLoggedIn]= useState(token?true:false);
 
 
 

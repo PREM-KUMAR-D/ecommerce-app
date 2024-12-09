@@ -10,7 +10,7 @@ const NavBar = (props) => {
   const cartCtx = useContext(CartContext);
   const authCtx = useContext(AuthContext);
 
-  console.log("NavBar isLoggedIn :",authCtx.isLoggedIn)
+  
 
   const handleOpenCart = () => {
     cartCtx.setShowCart(true);
