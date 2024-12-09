@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation , Navigate} from "react-router-dom";
 
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Store from "./pages/Store/Store";
@@ -15,16 +15,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Products from "./pages/Products/Products";
 import Login from "./pages/Login/Login";
+import AuthContext from "./store/AuthContext/auth-context";
 
 function App() {
   return (
     <Router>
       <AuthProvider>
-      <ToastProvider>
-        <CartProvider>
-          <MainLayout />
-        </CartProvider>
-      </ToastProvider>
+        <ToastProvider>
+          <CartProvider>
+            <MainLayout />
+          </CartProvider>
+        </ToastProvider>
       </AuthProvider>
     </Router>
   );
@@ -32,6 +33,7 @@ function App() {
 
 const MainLayout = () => {
   const location = useLocation();
+  const authCtx = useContext(AuthContext);
 
 
   const isHome = location.pathname === "/" || location.pathname === "/home";
@@ -51,10 +53,19 @@ const MainLayout = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/store" element={<Store />} />
+          <Route
+            path="/store"
+            element={
+              authCtx.isLoggedIn ? (
+                <Store />
+              ) : (
+                <Navigate to="/login" replace />
+              )
+            }
+          />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/products/:productId" element={<Products/>} />
-          <Route path="/login" element={<Login/>} />
+          <Route path="/products/:productId" element={<Products />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
 

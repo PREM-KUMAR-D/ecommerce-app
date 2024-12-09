@@ -73,7 +73,7 @@ const Login = (props) => {
       // alert(error)
       const failureMessage = isLogin ? "Login Failure" : " Sign Up Failure";
       console.log(error);
-      toastCtx.addToast("Login Failure", "danger");
+      toastCtx.addToast(failureMessage, "danger");
     }
   }
 
