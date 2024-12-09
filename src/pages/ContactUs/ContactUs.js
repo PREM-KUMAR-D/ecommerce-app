@@ -34,7 +34,7 @@ const ContactUs = () => {
   };
 
   return (
-    <Container>
+    <Container className="w-50 h-50 bg-light p-5">
       <h2 className="text-center my-4">Contact Us</h2>
       <Form onSubmit={formSubmitHandler}>
         <Form.Group className="mb-3" controlId="formName">
@@ -52,7 +52,7 @@ const ContactUs = () => {
           <Form.Control type="tel" placeholder="Phone Number" required />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="dark" type="submit">
           Submit
         </Button>
       </Form>

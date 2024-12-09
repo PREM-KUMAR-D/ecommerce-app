@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Form, Button, ListGroup, Row, Col } from "react-bootstrap";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa"; 
+import AuthContext from "../../store/AuthContext/auth-context";
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([
@@ -10,12 +11,14 @@ const Reviews = () => {
     ]);
     const [newReview, setNewReview] = useState("");
     const [newRating, setNewRating] = useState(0);
+    const {userName} = useContext(AuthContext);
+
 
     const addReviewHandler = () => {
         if (newReview.trim()) {
             setReviews([
                 ...reviews,
-                { user: "Anonymous", text: newReview, rating: newRating },
+                { user: userName, text: newReview, rating: newRating },
             ]);
             setNewReview("");
             setNewRating(0);
