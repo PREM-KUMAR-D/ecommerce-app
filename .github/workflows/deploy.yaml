@@ -21,7 +21,7 @@ jobs:
           touch .env
           echo REACT_APP_FIRE_BASE_URL={{secrets.FIRE_BASE_URL}} >> .env
           echo REACT_APP_FIRE_BASE_API_KEY={{secrets.FIRE_BASE_API_KEY}} >> .env
-          cat .env
+          
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
